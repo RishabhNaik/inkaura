@@ -2,61 +2,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Google Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
+      integrity="sha512-rrnHbxTXPrzuUNHSZ6dzVADNY//Qn1NMLA5wgP6MKQ7rgwMCt2BC0g6vCFKbU1Y77bCSA+bpsXa0r9kYId1KZg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
+      }
+
+      /* Add font family configuration */
+      @layer base {
+        html {
+          font-family: "Inter", sans-serif;
+        }
       }
     </style>
 
     <title>Document</title>
   </head>
-  <body class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] object-fit bg-cover bg-norepeat">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
-          aria-label="Global"
+  <body
+    class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] bg-cover bg-no-repeat"
+  >
+    <header class="">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
+        aria-label="Global"
+      >
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="assets/img/logo.png" alt="" />
+          </a>
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Home</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Contact</a>
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+      </div>
+    </header>
+
+    <div
+      class="absolute inset-0 flex items-center justify-center h-screen px-4"
+    >
+      <div
+        class="text-center text-sm/6 text-gray-600 font-medium border-4 px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50 opacity-60 bg-url[(assets/img/t-shirt.png)]"
+      >
+        YOUR STYLE-YOUR STORY
+        <h2 class="text-L font-medium tracking-tight text-gray-900 lg:text-4xl">
+          INK AURA
+        </h2>
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
         >
-          <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img
-                class="h-8 w-auto"
-                src="assets/img/logo.png" alt=""/>
-            </a>
-          </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm/6 font-semibold text-gray-900"
-              >Home</a
-            >
-            <a href="#" class="text-sm/6 font-semibold text-gray-900"
-              >About</a
-            >
-            <a href="#" class="text-sm/6 font-semibold text-gray-900"
-              >Contact</a
-            >
-            </div>
-        </nav>
-        <!-- Mobile menu, show/hide based on menu open state. -->
-          <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          
-            <div
-              class="text-center text-sm/6 text-gray-600 font-medium border-4 rounded-tr-[90px] rounded-bl-[90px] p-5 bg-sky-50 opacity-60 px-8 py-10"
-            >YOUR STYLE-YOUR STORY
-           <h2 
-              class="text-L font-medium tracking-tight  text-gray-900 lg:text-4xl "
-              >
-              INK AURA
-            </h2>
-            <h1
-              class="text-5xl font-Dancing tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              COMING SOON
-            </h1>
-            </div>
-           </div>
-          
-        
+          COMING SOON
+        </h1>
+
+        <div class="w-95 h-95 fixed inset-y-35">
+          <img src="assets/img/t-shirt.png" />
         </div>
       </div>
     </div>
