@@ -2,18 +2,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- Add Google Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
+      integrity="sha512-rrnHbxTXPrzuUNHSZ6dzVADNY//Qn1NMLA5wgP6MKQ7rgwMCt2BC0g6vCFKbU1Y77bCSA+bpsXa0r9kYId1KZg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
       }
+
+      /* Add font family configuration */
+      @layer base {
+        html {
+          font-family: "Inter", sans-serif;
+        }
+      }
     </style>
+
+    <title>Document</title>
   </head>
   <body
-    class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] object-fit: fill"
+    class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] bg-cover bg-no-repeat"
   >
-    <header class="absolute inset-x-0 top-0 z-50">
+    <header class="">
       <nav
         class="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -37,9 +60,11 @@
       </div>
     </header>
 
-    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+    <div
+      class="absolute inset-0 flex items-center justify-center h-screen px-4"
+    >
       <div
-        class="text-center text-sm/6 text-gray-600 font-medium border-4 p-5 bg-sky-50 opacity-60"
+        class="text-center text-sm/6 text-gray-600 font-medium border-4 px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50 opacity-60 bg-url[(assets/img/t-shirt.png)]"
       >
         YOUR STYLE-YOUR STORY
         <h2 class="text-L font-medium tracking-tight text-gray-900 lg:text-4xl">
@@ -50,6 +75,10 @@
         >
           COMING SOON
         </h1>
+
+        <div class="w-95 h-95 fixed inset-y-35">
+          <img src="assets/img/t-shirt.png" />
+        </div>
       </div>
     </div>
   </body>
