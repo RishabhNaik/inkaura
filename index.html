@@ -3,13 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Add Google Font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
@@ -21,13 +19,16 @@
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
+        --font-display: "Sora", "Serif";
       }
 
       /* Add font family configuration */
       @layer base {
-        html {
-          font-family: "Inter", sans-serif;
+        html,h1{
+          font-family: "Bebas Neue", Serif;
         }
+        
+
       }
     </style>
 
@@ -38,7 +39,7 @@
   >
     <header class="">
       <nav
-        class="flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
+        class="font-display flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
@@ -48,10 +49,10 @@
           </a>
         </div>
 
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Home</a>
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Contact</a>
+        <div class="hidden lg:flex lg:gap-x-12 ">
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">Home</a>
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">About</a>
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">Contact</a>
         </div>
       </nav>
       <!-- Mobile menu, show/hide based on menu open state. -->
@@ -61,28 +62,27 @@
     </header>
 
     <div
-      class="z-20 absolute inset-0 flex items-center justify-center h-screen px-4"
+      class="relative flex items-center justify-center h-screen px-4"
     >
-    
       <div
-        class="z-50 text-center text-sm/6 text-gray-400 font-medium border-0 px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50"
-      > <div class="-z-10 w-90 h-90 fixed top-30 bottom-30 right-120 ">
+        class="z-10 absolute top-40 right-100 text-center bg-blue-100 bg-opacity-50 text-sm/6 text-gray-400 font-medium border-0 px-12 py-8 w-155 h-50 rounded-tr-[90px] rounded-bl-[90px]"
+      >
+        <div class="-z-10 absolute w-90 h-90 fixed top-35 bottom-40 right-130">
           <img src="assets/img/t-shirt.png" />
         </div>
-      
+        <h2 class="z-10 absolute bottom-40 left-60 font-medium tracking-tight text-gray-400 lg:text-xl"
+        >
         YOUR STYLE-YOUR STORY
-        <h2 class="font-medium tracking-tight text-gray-600 lg:text-4xl">
+        </h2>
+        <h2 class="z-10 absolute bottom-30 left-69 font-medium tracking-tight text-gray-300 lg:text-3xl">
           INK AURA
         </h2>
         <h1
-          class="text-5xl font-semibold tracking-tight text-balance text-gray-500 sm:text-7xl"
+          class="z-10 absolute top-20 left-25 text-gray-200 mix-blend-difference tracking-wide text-6xl font-semibold tracking-tight sm:text-8xl"
         >
           COMING SOON
         </h1>
-
-        
       </div>
-     
     </div>
   </body>
 </html>
