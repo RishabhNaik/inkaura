@@ -3,11 +3,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Add Google Font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Condiment&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
@@ -19,7 +22,9 @@
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
-        --font-display: "Sora", serif;
+        --font-display: "Poppins", serif;
+        --font-unbounded: "Unbounded", serif;
+        --font-condiment: "Condiment", serif;
       }
 
       /* Add font family configuration */
@@ -27,7 +32,7 @@
         html {
         }
         h1 {
-          font-family: "Bebas Neue", serif;
+          font-family: "", serif;
         }
         
 
@@ -65,15 +70,19 @@
 
     <div class="relative flex items-center justify-center min-h-screen px-4">
       <div
-        class="z-10 absolute w-2/4 h-1/4 px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50 bg-opacity-60"
+        class="z-10 absolute flex items-center justify-center w-2/4 h-3/9  px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50 bg-opacity-60"
       >
-        <div class="-z-10 absolute">
-          <img src="assets/img/t-shirt.png"/>
+        <div class="-z-10 absolute pt-2 w-6/10 sm:w-6/10">
+          <img src="assets/img/t-shirt.png" />
         </div>
         <div class="relative text-center">
-          <p class="text-gray-400 lg:text-xl">YOUR STYLE-YOUR STORY</p>
-          <h2 class="text-gray-300 lg:text-3xl">INK AURA</h2>
-          <h1 class="text-xl md:text-4xl lg:text-7xl">Coming Soon</h1>
+          <p class="font-unbounded pb-6 text-gray-400 lg:text-xl text-md">YOUR STYLE-YOUR STORY</p>
+          <h2 class="font-unbounded pb-6 text-gray-200 lg:text-3xl">INK AURA</h2>
+          <h1
+            class="font-condiment text-3xl text-gray-100 mix-blend-difference md:text-6xl lg:text-7xl"
+          >
+            COMING SOON
+          </h1>
         </div>
       </div>
     </div>
