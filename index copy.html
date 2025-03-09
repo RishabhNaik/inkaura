@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Google Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
+      integrity="sha512-rrnHbxTXPrzuUNHSZ6dzVADNY//Qn1NMLA5wgP6MKQ7rgwMCt2BC0g6vCFKbU1Y77bCSA+bpsXa0r9kYId1KZg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+        --font-display: "Sora", "Serif";
+      }
+
+      /* Add font family configuration */
+      @layer base {
+        html,h1{
+          font-family: "Bebas Neue", Serif;
+        }
+        
+
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body
+    class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] bg-cover bg-no-repeat"
+  >
+    <header class="">
+      <nav
+        class="font-display flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
+        aria-label="Global"
+      >
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="assets/img/logo.png" alt="" />
+          </a>
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-12 ">
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">Home</a>
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">About</a>
+          <a href="#" class="text-xl/6 font-semibold text-gray-900">Contact</a>
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+      </div>
+    </header>
+
+    <div
+      class="relative flex items-center justify-center h-screen px-4"
+    >
+      <div
+        class="z-10 absolute sm:top-80 sm:right-10 md:top-40 md:right-100 text-center bg-blue-100 bg-opacity-50 text-sm/6 text-gray-400 font-medium border-0  px-12 py-8 w-140 h-50 rounded-tr-[90px] rounded-bl-[90px]"
+      >
+        <div class="-z-10 absolute w-90 h-90  sm:w-90 sm:h-90 fixed sm:top-80 md:top-35 md:right-125 sm:right-40">
+          <img src="assets/img/t-shirt.png" />
+        </div>
+        <h2 class="z-10 absolute md:bottom-40 md:left-50 sm:bottom-37 sm:left-47 font-medium tracking-tight text-gray-400 lg:text-xl sm:text-2xl"
+        >
+        YOUR STYLE-YOUR STORY
+        </h2>
+        <h2 class="z-10 absolute md:bottom-30 md:left-59 sm:bottom-30 sm:left-58 font-medium tracking-tight text-gray-300 lg:text-3xl sm:text-2xl">
+          INK AURA
+        </h2>
+        <h1
+          class="z-10 absolute md:top-20 md:left-20 sm:top-20 sm:left-18 text-gray-200 mix-blend-difference tracking-wide text-6xl font-semibold tracking-tight sm:text-8xl"
+        >
+          COMING SOON
+        </h1>
+      </div>
+    </div>
+  </body>
+</html>
