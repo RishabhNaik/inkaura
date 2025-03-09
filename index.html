@@ -1,94 +1,257 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Add Google Font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+    <!-- Favicon -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Condiment&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap"
-      rel="stylesheet"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon.png"
     />
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.0-alpha.11/lib.js"
-      integrity="sha512-rrnHbxTXPrzuUNHSZ6dzVADNY//Qn1NMLA5wgP6MKQ7rgwMCt2BC0g6vCFKbU1Y77bCSA+bpsXa0r9kYId1KZg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <style type="text/tailwindcss">
-      @theme {
-        --color-clifford: #da373d;
-        --font-display: "Poppins", serif;
-        --font-unbounded: "Unbounded", serif;
-        --font-condiment: "Condiment", serif;
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Condiment&family=Poppins:wght@200;300;400;500;600;700&family=Unbounded:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              unbounded: ["Unbounded", "sans-serif"],
+              condiment: ["Condiment", "cursive"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              float: "float 3s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2070&auto=format&fit=crop");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
 
-      /* Add font family configuration */
-      @layer base {
-        html {
-        }
-        h1 {
-          font-family: "", serif;
-        }
-        
+      .glassmorphism {
+        position: relative;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 100px 0px 100px 0px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
 
+      /* Reflecting light animation */
+      /* .glassmorphism::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: rotate(25deg);
+        animation: reflect-light 3s ease-in-out infinite;
+      } */
+
+      @keyframes reflect-light {
+        0% {
+          top: -100%;
+          left: -100%;
+        }
+        100% {
+          top: 100%;
+          left: 100%;
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .navbar {
+        background: transparent !important;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: none;
       }
     </style>
 
-    <title>Document</title>
+    <title>Inkaura - Coming Soon</title>
   </head>
-  <body
-    class="overflow-hidden bg-[url(assets/img/coming_soon_bg.png)] bg-cover bg-no-repeat"
-  >
-    <header class="">
+  <body>
+    <header class="relative">
       <nav
-        class="font-display flex items-center justify-between p-6 lg:px-8 bg-sky-50 opacity-60"
-        aria-label="Global"
+        class="navbar fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 md:p-6 w-full"
       >
-        <div class="flex">
+        <div class="flex flex-1">
           <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="assets/img/logo.png" alt="" />
+            <span class="sr-only">Inkaura</span>
+            <img
+              class="h-8 w-auto"
+              src="assets/img/logo.png"
+              alt="Inkaura Logo"
+            />
           </a>
         </div>
-
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-xl/6 font-semibold text-gray-900">Home</a>
-          <a href="#" class="text-xl/6 font-semibold text-gray-900">About</a>
-          <a href="#" class="text-xl/6 font-semibold text-gray-900">Contact</a>
+          <a
+            href="#"
+            class="text-xl font-semibold text-white font-unbounded hover:text-indigo-300 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#section1"
+            class="text-xl font-semibold text-white font-unbounded hover:text-indigo-300 transition-colors"
+            >About</a
+          >
+          <a
+            href="#section2"
+            class="text-xl font-semibold text-white font-unbounded hover:text-indigo-300 transition-colors"
+            >Contact</a
+          >
         </div>
       </nav>
-      <!-- Mobile menu, show/hide based on menu open state. -->
-      <div class="lg:hidden" role="dialog" aria-modal="true">
-        <!-- Background backdrop, show/hide based on slide-over state. -->
-      </div>
     </header>
 
-    <div class="relative flex items-center justify-center min-h-screen px-4">
+    <div class="pt-24 md:pt-28 lg:pt-32 text-center px-8">
+      <div class="glassmorphism px-8 py-6 md:px-12 md:py-8 text-center">
+        <h2
+          class="font-unbounded text-4xl md:text-5xl lg:text-6xl text-white mb-4 tracking-wide"
+        >
+          INK AURA
+        </h2>
+        <p
+          class="font-unbounded text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed text-center"
+        >
+          Your Style - Your Story
+        </p>
+      </div>
+      <!-- <p id="countdown" class="text-white text-lg mt-4"></p> -->
+
       <div
-        class="z-10 absolute flex items-center justify-center w-2/4 h-3/9  px-12 py-8 rounded-tr-[90px] rounded-bl-[90px] bg-sky-50 bg-opacity-60"
+        class="relative flex items-center justify-center min-h-[30vh] sm:min-h-[60vh] md:min-h-[60vh] px-4"
       >
-        <div class="-z-10 absolute pt-2 w-6/10 sm:w-6/10">
-          <img src="assets/img/t-shirt.png" />
-        </div>
-        <div class="relative text-center">
-          <p class="font-unbounded pb-2 text-gray-400 lg:text-xl">
-            YOUR STYLE-YOUR STORY
-          </p>
-          <h2 class="font-unbounded pb-4 text-gray-200 lg:text-3xl">
-            INK AURA
-          </h2>
-          <h1
-            class="font-condiment text-8xl text-gray-100 mix-blend-difference"
-          >
-            COMING SOON
-          </h1>
+        <div
+          class="z-10 absolute flex items-center justify-center w-full md:w-3/4 lg:w-2/3 xl:w-2/4 h-2/4"
+        >
+          <div class="-z-10 absolute pt-2 w-4/6 sm:w-2/4 md:w-3/6 floating">
+            <img
+              src="assets/img/t-shirt.png"
+              class="w-full h-auto"
+              alt="T-shirt"
+            />
+          </div>
+
+          <div class="relative text-center py-4 md:py-6 lg:py-8">
+            <h1
+              class="font-condiment text-5xl md:text-6xl lg:text-8xl text-white"
+            >
+              COMING SOON
+            </h1>
+          </div>
         </div>
       </div>
     </div>
+
+    <section
+      class="py-12 md:py-16 lg:py-20 bg-white text-center px-4 sm:px-6 lg:px-8 xl:px-32"
+      id="section1"
+    >
+      <h2
+        class="font-unbounded text-3xl md:text-4xl text-gray-900 mb-4 md:mb-6"
+      >
+        About Us
+      </h2>
+      <p
+        class="font-poppins text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto"
+      >
+        <span class="font-semibold"
+          >Redefining Fashion, One Outfit at a Time</span
+        ><br />
+        At Inkaura, we believe fashion is more than just clothing—it's an
+        expression of who you are. Our brand blends modern trends with classic
+        elegance, offering styles that are effortlessly chic and versatile.
+      </p>
+    </section>
+    <section
+      class="py-12 md:py-16 lg:py-20 bg-[#010120] text-center px-4 sm:px-6 lg:px-8 xl:px-32"
+      id="section2"
+    >
+      <h2
+        class="font-unbounded text-3xl md:text-4xl text-gray-300 mb-4 md:mb-6"
+      >
+        Contact Us
+      </h2>
+      <p
+        class="font-poppins text-base md:text-lg text-gray-400 leading-relaxed max-w-4xl mx-auto"
+      >
+        <span class="font-semibold"
+          >Redefining Fashion, One Outfit at a Time</span
+        ><br />
+        At Inkaura, we believe fashion is more than just clothing—it's an
+        expression of who you are. Our brand blends modern trends with classic
+        elegance, offering styles that are effortlessly chic and versatile.
+      </p>
+    </section>
+
+    <footer class="bg-gray-900 text-white text-center py-4 md:py-6">
+      <p class="font-poppins text-sm md:text-base">
+        &copy; 2025 Inkaura. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      const launchDate = new Date("2024-12-01T00:00:00").getTime();
+      const countdownTimer = setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = launchDate - now;
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById(
+          "countdown"
+        ).innerHTML = `Launching in ${days}d ${hours}h ${minutes}m`;
+        if (timeLeft < 0) {
+          clearInterval(countdownTimer);
+          document.getElementById("countdown").innerHTML = "We have launched!";
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
